@@ -1,7 +1,10 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8); // Устанавливаем UTF-8 кодировку в консоли
+
     double a, b;
     char op;
 
@@ -30,4 +33,3 @@ int main() {
     system("pause");
     return 0;
 }
-// test3
