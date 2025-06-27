@@ -1,0 +1,19 @@
+.github/workflows/build.ymlname: Build Console Calculator
+
+on:
+  push:
+    paths:
+      - '**.cpp'
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Compile with g++
+        run: g++ console_calculator.cpp -o calculator.exe
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: calculator-exe
+          path: calculator.exe
